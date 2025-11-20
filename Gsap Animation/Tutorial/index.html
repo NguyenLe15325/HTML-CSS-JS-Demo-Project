@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP Tutorial - Complete Guide</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 GSAP Animation Tutorial</h1>
+    <p class="subtitle">Complete Guide with Best Practices</p>
+    
+    <!-- Best Practices -->
+    <div class="best-practices">
+      <h2>📋 Best Practices</h2>
+      <ul>
+        <li><strong>Separate Files:</strong> Keep HTML, CSS, and JS in different files</li>
+        <li><strong>Organize Code:</strong> Group related animations in functions</li>
+        <li><strong>Use IDs/Classes:</strong> Target elements efficiently</li>
+        <li><strong>Performance:</strong> Animate transform and opacity for 60fps</li>
+        <li><strong>Cleanup:</strong> Kill animations when needed to prevent memory leaks</li>
+        <li><strong>Reusability:</strong> Create utility functions for common animations</li>
+      </ul>
+    </div>
+
+    <!-- File Structure Example -->
+    <div class="file-structure">
+      <h2>📁 File Structure</h2>
+      <div class="code-block">project/
+├── index.html
+├── styles.css
+└── animations.js</div>
+    </div>
+    
+    <!-- Demo 1: Basic to() -->
+    <div class="demo-section">
+      <h2>1. Basic Tween - gsap.to()</h2>
+      <div class="info">Most common method. Animates FROM current state TO specified values.</div>
+      <div class="code-block">gsap.to("#box1", { 
+  x: 300, 
+  duration: 1, 
+  ease: "power2.out" 
+});</div>
+      <div class="demo-box" id="box1">Box 1</div>
+      <div class="button-group">
+        <button onclick="demo1()">Animate</button>
+        <button onclick="reset1()">Reset</button>
+      </div>
+    </div>
+    
+    <!-- Demo 2: from() -->
+    <div class="demo-section">
+      <h2>2. From Animation - gsap.from()</h2>
+      <div class="info">Animates FROM specified values TO current state. Great for entrance animations.</div>
+      <div class="code-block">gsap.from("#box2", { 
+  opacity: 0, 
+  y: -100, 
+  duration: 1, 
+  ease: "bounce.out" 
+});</div>
+      <div class="demo-box" id="box2">Box 2</div>
+      <div class="button-group">
+        <button onclick="demo2()">Fade In</button>
+      </div>
+    </div>
+    
+    <!-- Demo 3: Multiple Properties -->
+    <div class="demo-section">
+      <h2>3. Multiple Properties & Easing</h2>
+      <div class="info">Animate multiple properties simultaneously with various easing functions.</div>
+      <div class="code-block">gsap.to("#box3", { 
+  x: 250, 
+  rotation: 360, 
+  scale: 1.5,
+  duration: 2,
+  ease: "bounce.out"
+});</div>
+      <div class="demo-box" id="box3">Box 3</div>
+      <div class="button-group">
+        <button onclick="demo3()">Animate</button>
+        <button onclick="reset3()">Reset</button>
+      </div>
+    </div>
+    
+    <!-- Demo 4: Timeline -->
+    <div class="demo-section">
+      <h2>4. Timeline - Sequenced Animations</h2>
+      <div class="info">Create complex sequences with precise timing control.</div>
+      <div class="code-block">const tl = gsap.timeline();
+tl.to(".timeline-box", { x: 200, stagger: 0.2 });</div>
+      <div class="timeline-demo">
+        <div class="timeline-box box1">1</div>
+        <div class="timeline-box box2">2</div>
+        <div class="timeline-box box3">3</div>
+        <div class="timeline-box box4">4</div>
+      </div>
+      <div class="button-group">
+        <button onclick="demo4()">Play Timeline</button>
+        <button onclick="reset4()">Reset</button>
+      </div>
+    </div>
+    
+    <!-- Demo 5: Stagger -->
+    <div class="demo-section">
+      <h2>5. Stagger - Animate Multiple Elements</h2>
+      <div class="info">Animate multiple elements with staggered delays. Perfect for lists.</div>
+      <div class="code-block">gsap.to(".stagger-box", {
+  y: -50,
+  duration: 0.5,
+  stagger: 0.1,
+  ease: "power2.out"
+});</div>
+      <div class="timeline-demo">
+        <div class="stagger-box box1">A</div>
+        <div class="stagger-box box2">B</div>
+        <div class="stagger-box box3">C</div>
+        <div class="stagger-box box4">D</div>
+      </div>
+      <div class="button-group">
+        <button onclick="demo5()">Stagger</button>
+        <button onclick="reset5()">Reset</button>
+      </div>
+    </div>
+    
+    <!-- Demo 6: ScrollTrigger -->
+    <div class="demo-section">
+      <h2>6. ScrollTrigger - Scroll-Based Animation</h2>
+      <div class="info">Trigger animations based on scroll position. Scroll in the container!</div>
+      <div class="code-block">gsap.to("#scrollBox", {
+  rotation: 720,
+  scrollTrigger: {
+    trigger: "#scrollBox",
+    scrub: true,
+    scroller: "#scroll-container"
+  }
+});</div>
+      <div class="scroll-section" id="scroll-container">
+        <div class="scroll-content">
+          <p style="margin-bottom: 100px;">Scroll down to see the animation...</p>
+          <div class="scroll-box" id="scrollBox">Scroll!</div>
+          <p style="margin-top: 100px;">Keep scrolling...</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Demo 7: Repeat & Yoyo -->
+    <div class="demo-section">
+      <h2>7. Repeat & Yoyo</h2>
+      <div class="info">Create looping animations that play forward and backward.</div>
+      <div class="code-block">gsap.to("#box7", {
+  x: 200,
+  duration: 1,
+  repeat: -1,  // -1 = infinite
+  yoyo: true,
+  ease: "power1.inOut"
+});</div>
+      <div class="demo-box" id="box7">Loop</div>
+      <div class="button-group">
+        <button onclick="demo7()">Start Loop</button>
+        <button onclick="stop7()">Stop</button>
+      </div>
+    </div>
+
+    <!-- Demo 8: gsap.set() -->
+    <div class="demo-section">
+      <h2>8. Instant Set - gsap.set()</h2>
+      <div class="info">Set properties instantly without animation. Useful for initial states.</div>
+      <div class="code-block">gsap.set("#box8", { 
+  x: 200, 
+  backgroundColor: "#ff6b6b",
+  scale: 1.2 
+});</div>
+      <div class="demo-box" id="box8">Set Props</div>
+      <div class="button-group">
+        <button onclick="demo8()">Set Instantly</button>
+        <button onclick="reset8()">Reset</button>
+      </div>
+    </div>
+
+    <!-- Demo 9: Callbacks -->
+    <div class="demo-section">
+      <h2>9. Callbacks - Lifecycle Hooks</h2>
+      <div class="info">Execute functions at different stages: onStart, onUpdate, onComplete.</div>
+      <div class="code-block">gsap.to("#box9", {
+  x: 200,
+  onStart: () => console.log("Started"),
+  onUpdate: () => console.log("Updating"),
+  onComplete: () => console.log("Done!")
+});</div>
+      <div class="demo-box" id="box9">Callbacks</div>
+      <div class="button-group">
+        <button onclick="demo9()">Animate</button>
+        <button onclick="reset9()">Reset</button>
+      </div>
+    </div>
+
+    <!-- Demo 10: Delay -->
+    <div class="demo-section">
+      <h2>10. Delay & Duration Control</h2>
+      <div class="info">Control animation timing with delay and duration parameters.</div>
+      <div class="code-block">gsap.to("#box10", {
+  x: 200,
+  duration: 2,
+  delay: 0.5,
+  ease: "elastic.out(1, 0.3)"
+});</div>
+      <div class="demo-box" id="box10">Delayed</div>
+      <div class="button-group">
+        <button onclick="demo10()">Animate</button>
+        <button onclick="reset10()">Reset</button>
+      </div>
+    </div>
+
+    <!-- Demo 11: FromTo -->
+    <div class="demo-section">
+      <h2>11. FromTo - Full Control</h2>
+      <div class="info">Define both starting and ending values for complete control.</div>
+      <div class="code-block">gsap.fromTo("#box11", 
+  { x: -100, opacity: 0 },
+  { x: 200, opacity: 1, duration: 1 }
+);</div>
+      <div class="demo-box" id="box11">FromTo</div>
+      <div class="button-group">
+        <button onclick="demo11()">Animate</button>
+        <button onclick="reset11()">Reset</button>
+      </div>
+    </div>
+
+    <!-- Demo 12: Text Animation -->
+    <div class="demo-section">
+      <h2>12. Text Animation - Split Characters</h2>
+      <div class="info">Animate text character by character for engaging effects.</div>
+      <div class="code-block">const chars = text.split('');
+gsap.from(chars, {
+  opacity: 0,
+  y: -50,
+  stagger: 0.05
+});</div>
+      <h3 class="animated-text" id="animatedText">Hello GSAP!</h3>
+      <div class="button-group">
+        <button onclick="demo12()">Animate Text</button>
+      </div>
+    </div>
+
+    <!-- Code Organization Example -->
+    <div class="code-organization">
+      <h2>💡 Code Organization Example</h2>
+      <p>Here's how to structure your animations in animations.js:</p>
+      <div class="code-block">// animations.js
+
+// Utility function for fade in
+function fadeIn(element) {
+  return gsap.from(element, {
+    opacity: 0,
+    y: 20,
+    duration: 0.6,
+    ease: "power2.out"
+  });
+}
+
+// Utility function for slide in
+function slideIn(element, direction = "left") {
+  const xValue = direction === "left" ? -100 : 100;
+  return gsap.from(element, {
+    x: xValue,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out"
+  });
+}
+
+// Complex timeline animation
+function heroAnimation() {
+  const tl = gsap.timeline();
+  tl.from(".hero-title", { y: -50, opacity: 0 })
+    .from(".hero-subtitle", { y: 20, opacity: 0 })
+    .from(".hero-button", { scale: 0, opacity: 0 });
+  return tl;
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+  fadeIn('.content');
+  heroAnimation();
+});</div>
+    </div>
+  </div>
+  
+  <script src="animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional GSAP Scroll Reveal</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    
+    <!-- Load GSAP Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Load ScrollTrigger Plugin (MUST be loaded after GSAP Core) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <!-- 1. Filler Content Before Animation -->
+    <div class="section bg-gray-100">
+        <h2 class="text-4xl text-gray-700">Scroll Down to Start the Experience</h2>
+    </div>
+
+    <!-- 2. The Main Pinned Animation Container -->
+    <div id="scroll-pin-container" class="pin-container">
+        
+        <h1 id="main-title" class="text-5xl font-extrabold mb-8 opacity-0 translate-y-8">
+            The Three Pillars of Success
+        </h1>
+
+        <!-- Step 1: Initialize off-screen and slightly transparent -->
+        <div id="step-1" class="step-card translate-x-[-100px]">
+            <div class="step-title text-indigo-600">Phase 1: Foundation</div>
+            <p>Establish a solid, scalable base using modern technology standards.</p>
+        </div>
+
+        <!-- Step 2: Initialize off-screen to the right -->
+        <div id="step-2" class="step-card translate-x-[100px]">
+            <div class="step-title text-green-600">Phase 2: Execution</div>
+            <p>Deploy resources efficiently and focus on high-impact objectives.</p>
+        </div>
+
+        <!-- Step 3: Initialize scaled down and rotated -->
+        <div id="step-3" class="step-card scale-75 rotate-[-5deg]">
+            <div class="step-title text-red-600">Phase 3: Iteration</div>
+            <p>Gather feedback, analyze results, and continuously refine the product.</p>
+        </div>
+
+    </div>
+
+    <!-- 3. Filler Content After Animation -->
+    <div class="section bg-gray-100">
+        <h2 class="text-4xl text-gray-700">Animation Complete! Continue Scrolling.</h2>
+    </div>
+
+    <script src="animation.js"></script>
+
+</body>
+</html>

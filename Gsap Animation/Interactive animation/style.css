@@ -1,0 +1,35 @@
+
+body {
+    background-color: #0f172a; /* Dark background */
+    overflow: hidden; /* Prevent scrollbars from particles moving off-screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+#particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through to the foreground */
+    z-index: 1; 
+}
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #22d3ee; /* Cyan */
+    opacity: 0; /* Start hidden */
+    box-shadow: 0 0 10px #22d3ee;
+}
+#content {
+    z-index: 10;
+    text-align: center;
+    position: relative;
+    /* Added to prevent Cumulative Layout Shift during parallax */
+    will-change: transform; 
+}

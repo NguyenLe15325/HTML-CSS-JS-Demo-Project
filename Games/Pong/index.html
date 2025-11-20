@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="startScreen">
+            <h1>🏓 PONG</h1>
+            <div class="controls-info">
+                <div class="player-controls">
+                    <h3>Player 1</h3>
+                    <p>W - Move Up</p>
+                    <p>S - Move Down</p>
+                </div>
+                <div class="player-controls">
+                    <h3>Player 2</h3>
+                    <p>↑ - Move Up</p>
+                    <p>↓ - Move Down</p>
+                </div>
+            </div>
+            <p class="game-info">First to <span class="highlight">5</span> points wins!</p>
+            <button id="startBtn">START GAME</button>
+        </div>
+
+        <div id="ui">
+            <div class="score-display">
+                <div class="player-score">
+                    <span class="player-label">Player 1</span>
+                    <span id="score1" class="score">0</span>
+                </div>
+                <div class="divider">:</div>
+                <div class="player-score">
+                    <span id="score2" class="score">0</span>
+                    <span class="player-label">Player 2</span>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="gameOver">
+            <h2 id="winnerText">PLAYER 1 WINS!</h2>
+            <p>Final Score: <span id="finalScore">5 - 3</span></p>
+            <button id="restartBtn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

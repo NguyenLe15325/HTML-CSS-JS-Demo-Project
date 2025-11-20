@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Particle Background with Mouse Parallax</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Configure Tailwind for font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Load GSAP Core library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Particle Container (Z-index 1 for background) -->
+    <div id="particle-container"></div>
+
+    <!-- Main Content (Z-index 10 for foreground) -->
+    <div id="content">
+        <h1 class="text-6xl md:text-8xl font-extrabold mb-4 tracking-tight">
+            GSAP POWERED
+        </h1>
+        <p class="text-xl text-slate-400">
+            Move your mouse to see the interactive parallax effect.
+        </p>
+    </div>
+
+    <script src="animation.js"></script>
+
+</body>
+</html>

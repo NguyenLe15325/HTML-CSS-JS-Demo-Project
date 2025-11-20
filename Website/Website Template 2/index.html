@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="title">Global Tech Solutions</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind Configuration must remain in the HTML head before content loads
+        tailwind.config = {
+            darkMode: 'class', // Enables dark mode based on the 'dark' class on the HTML tag
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-color': 'var(--color-primary)',
+                        'secondary-color': 'var(--color-secondary)',
+                        'background-light': '#F8FAFC',
+                        'background-dark': '#0F172A',
+                        'text-light': '#1E293B',
+                        'text-dark': '#F1F5F9',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- LINK to external CSS file -->
+    <link rel="stylesheet" href="global_styles.css">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark min-h-screen flex flex-col">
+
+    <!-- 1. PROFESSIONAL NAVIGATION BAR -->
+    <header class="shadow-xl sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- 1A. Branding / Home Link (Far Left) -->
+                <a href="#" class="text-3xl font-extrabold text-primary-color transition-colors">
+                    Global<span class="text-secondary-color">.Solutions</span>
+                </a>
+                
+                <!-- 1B. Primary Navigation Links (Desktop Only) -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#solutions" class="nav-link" data-key="nav_solutions">Solutions</a>
+                    <a href="#case-studies" class="nav-link" data-key="nav_studies">Case Studies</a>
+                    <a href="#pricing" class="nav-link" data-key="nav_pricing">Pricing</a>
+                    <a href="#about" class="nav-link" data-key="nav_about">About Us</a>
+                </nav>
+
+                <!-- 1C. Utilities & CTA (Far Right) -->
+                <div class="flex items-center space-x-4">
+                    
+                    <!-- Language Dropdown Utility -->
+                    <div class="relative hidden sm:block">
+                        <select id="language-toggle" class="bg-gray-100 dark:bg-gray-700 text-sm font-medium py-2 px-3 rounded-lg border border-gray-300 dark:border-gray-600 appearance-none cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                            <option value="en">English (EN)</option>
+                            <option value="es">Español (ES)</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-300">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                    </div>
+
+                    <!-- Theme Toggle Button Utility -->
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" aria-label="Toggle dark mode">
+                        <!-- Sun Icon (Light Mode) -->
+                        <svg id="sun-icon" class="w-6 h-6 text-yellow-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <!-- Moon Icon (Dark Mode) -->
+                        <svg id="moon-icon" class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    
+                    <!-- Primary CTA Button -->
+                    <a href="mailto:contact@globalsolutions.com" class="hidden sm:inline-block bg-primary-color text-white font-semibold py-2 px-6 rounded-full shadow-md hover:bg-secondary-color transition-colors transform hover:scale-105" data-key="nav_cta">
+                        Contact Sales
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle menu">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. MOBILE MENU DROPDOWN (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-gray-900 shadow-xl border-t dark:border-gray-800">
+            <nav class="px-5 pt-4 pb-4 space-y-3">
+                <a href="#solutions" class="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary-color" data-key="nav_solutions">Solutions</a>
+                <a href="#case-studies" class="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary-color" data-key="nav_studies">Case Studies</a>
+                <a href="#pricing" class="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary-color" data-key="nav_pricing">Pricing</a>
+                <a href="#about" class="block text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary-color" data-key="nav_about">About Us</a>
+                
+                <div class="pt-4 border-t dark:border-gray-700 space-y-3">
+                    <a href="mailto:contact@globalsolutions.com" class="block w-full text-center text-lg bg-primary-color text-white py-3 rounded-xl hover:bg-secondary-color font-semibold" data-key="nav_cta">
+                        Contact Sales
+                    </a>
+                    <!-- Mobile Language Toggle (Visible only on mobile inside the menu) -->
+                    <div class="relative block sm:hidden">
+                        <select id="language-toggle-mobile" class="w-full text-center bg-gray-100 dark:bg-gray-800 text-lg font-medium py-3 rounded-xl appearance-none cursor-pointer">
+                            <option value="en">English (EN)</option>
+                            <option value="es">Español (ES)</option>
+                        </select>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- 3. Hero Section -->
+        <section class="py-20 sm:py-32 text-center bg-gray-50 dark:bg-gray-800 border-b dark:border-gray-700">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 data-key="hero_headline" class="text-4xl sm:text-6xl font-extrabold text-primary-color leading-tight mb-6">
+                    Seamless Global Integration
+                </h1>
+                <p data-key="hero_subtext" class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Providing scalable cloud solutions and multilingual support for international businesses.
+                </p>
+                <a href="#solutions" class="mt-10 inline-block bg-secondary-color text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:opacity-90 transition-all duration-300">
+                    Discover Our Solutions
+                </a>
+            </div>
+        </section>
+
+        <!-- Placeholder Content Sections (Linked to Navbar) -->
+        <section id="solutions" class="min-h-[50vh] py-20 border-b dark:border-gray-700">
+            <h2 class="text-3xl font-bold text-center" data-key="section_solutions">Our Solutions</h2>
+            <p class="text-center mt-4 text-lg text-gray-600 dark:text-gray-400">Content for scalable cloud infrastructure and services.</p>
+        </section>
+        
+        <section id="case-studies" class="min-h-[50vh] py-20 bg-gray-50 dark:bg-gray-800 border-b dark:border-gray-700">
+            <h2 class="text-3xl font-bold text-center" data-key="section_studies">Recent Case Studies</h2>
+            <p class="text-center mt-4 text-lg text-gray-600 dark:text-gray-400">Success stories demonstrating real-world impact.</p>
+        </section>
+        
+        <section id="pricing" class="min-h-[50vh] py-20 border-b dark:border-gray-700">
+            <h2 class="text-3xl font-bold text-center" data-key="section_pricing">Transparent Pricing</h2>
+            <p class="text-center mt-4 text-lg text-gray-600 dark:text-gray-400">Clear plans built for every business size.</p>
+        </section>
+
+        <section id="about" class="min-h-[50vh] py-20 bg-gray-50 dark:bg-gray-800">
+            <h2 class="text-3xl font-bold text-center" data-key="section_about">About Our Company</h2>
+            <p class="text-center mt-4 text-lg text-gray-600 dark:text-gray-400">Our mission, values, and global team.</p>
+        </section>
+        
+    </main>
+
+    <!-- 4. Footer -->
+    <footer class="bg-gray-900 dark:bg-gray-950 text-white py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p data-key="footer_copyright" class="text-gray-400 text-sm">
+                &copy; 2025 Global Tech Solutions. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+    
+    <!-- LINK to external JavaScript file -->
+    <script src="global_scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+        /* Custom styles for professional appearance */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #1f2937;
+            text-align: center;
+        }
+        .pin-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Ensure the pinned container takes up the necessary space */
+            width: 100%;
+            background-color: #0c4a6e; /* Dark Blue background for the pinned section */
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .step-card {
+            background: rgba(255, 255, 255, 0.9);
+            color: #1f2937;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            margin: 1rem 0;
+            opacity: 0; /* Initial state hidden by default */
+        }
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }

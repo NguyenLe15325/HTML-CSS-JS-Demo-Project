@@ -1,0 +1,144 @@
+/* --- Global Styles --- */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    background-color: #1a1a1a; /* Dark background */
+    color: #f0f0f0; /* Light text */
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+    width: 250px; 
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    padding: 20px 0;
+    transition: width 0.3s; 
+    height: 100vh; 
+    position: fixed; 
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles when the sidebar is collapsed (via JavaScript) */
+.sidebar.collapsed {
+    width: 60px;
+}
+
+/* Hides text content when collapsed */
+.sidebar.collapsed .topic-header,
+.sidebar.collapsed .subtopic-list,
+.sidebar.collapsed h3,
+.sidebar.collapsed .nav-link { /* Added .nav-link here */
+    display: none;
+}
+
+/* --- Sidebar Header --- */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 15px 20px;
+    border-bottom: 1px solid #444;
+    margin-bottom: 10px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #00bcd4; /* Accent color */
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* --- Home Link Styles --- */
+.nav-link {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.home-link {
+    display: block;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #f0f0f0; 
+    text-decoration: none;
+    font-size: 1.2em; 
+}
+
+.home-link:hover {
+    background-color: #4a4a4a;
+}
+
+.home-link.active-link {
+    background-color: #00bcd4; 
+    color: #1a1a1a; 
+}
+
+/* --- Topic & Subtopic Styles --- */
+.topic {
+    margin-bottom: 5px;
+}
+
+.topic-header {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #f0f0f0; 
+    margin: 0;
+}
+
+.topic-header:hover {
+    background-color: #3a3a3a;
+}
+
+.subtopic-list {
+    display: none; 
+    overflow: hidden;
+    padding-left: 0; 
+}
+
+.subtopic-list.active {
+    display: block; 
+}
+
+.subtopic-link {
+    display: block;
+    padding: 8px 20px 8px 40px; 
+    color: #00bcd4; 
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.subtopic-link:hover {
+    background-color: #4a4a4a;
+    color: white;
+}
+
+/* Style for the active subtopic page */
+.subtopic-link.active-link {
+    background-color: #00bcd4; 
+    color: #1a1a1a; 
+    font-weight: bold;
+}
+
+/* --- Main Content Styles --- */
+.main-content {
+    flex-grow: 1; 
+    padding: 40px;
+    margin-left: 250px; 
+    transition: margin-left 0.3s;
+}
+
+/* Adjusts content margin when sidebar is collapsed */
+.sidebar.collapsed + .main-content {
+    margin-left: 60px;
+}
+
+h1, h2 {
+    color: #00bcd4;
+}

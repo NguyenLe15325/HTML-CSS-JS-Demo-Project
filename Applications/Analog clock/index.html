@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Analog Clock</title>
+    <!-- Load Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link the external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+        <h1 class="text-3xl sm:text-4xl font-extrabold mb-8 text-gray-900 tracking-tight">
+            Real-Time Analog Clock
+        </h1>
+        
+
+        <!-- Clock Container -->
+        <div id="clock" class="clock relative flex items-center justify-center">
+            
+            <!-- Hour Marks (12, 3, 6, 9) -->
+            <div class="hour-mark"><span>12</span></div>
+            <div class="hour-mark"><span>3</span></div>
+            <div class="hour-mark"><span>6</span></div>
+            <div class="hour-mark"><span>9</span></div>
+
+            <!-- Hands (will be rotated by JavaScript) -->
+            <div id="hour" class="hand hour-hand"></div>
+            <div id="minute" class="hand minute-hand"></div>
+            <div id="second" class="hand second-hand"></div>
+
+            <!-- Center Dot -->
+            <div class="center-dot"></div>
+        </div>
+
+        <!-- Digital Display (for easy reading and verification) -->
+        <div id="digital-display" class="mt-10 text-xl sm:text-2xl font-mono font-bold text-gray-800 p-3 bg-white rounded-xl shadow-xl border border-gray-200 w-full max-w-sm text-center">
+            00:00:00 AM
+        </div>
+
+    </div>
+
+    <!-- Link the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/*
+ * Custom CSS for Aurora Digital Website
+ * This file handles global CSS overrides, custom font definitions,
+ * and any complex styles not easily handled by Tailwind classes.
+ */
+
+/* Ensures the Inter font is used globally for consistency */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Custom text shadow for the hero text to help it stand out against the background */
+.text-shadow-custom {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}

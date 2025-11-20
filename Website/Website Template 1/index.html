@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Digital - Creative Design and Strategy</title>
+    
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Configuration (must run before content loads) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#0F172A',  // Slate 900
+                        'brand-light': '#F1F5F9', // Slate 100
+                        'brand-accent': '#06B6D4', // Cyan 500
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- LINK TO EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-brand-dark">
+
+    <!-- 1. Navigation Bar (Display Links Only) -->
+    <header class="shadow-lg sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Brand Name -->
+                <a href="#" class="text-3xl font-extrabold text-brand-dark transition-colors">
+                    Aurora<span class="text-brand-accent">.Digital</span>
+                </a>
+                
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#work" class="text-gray-700 hover:text-brand-accent font-medium transition-colors border-b-2 border-transparent hover:border-brand-accent pb-1">Our Work</a>
+                    <a href="#approach" class="text-gray-700 hover:text-brand-accent font-medium transition-colors border-b-2 border-transparent hover:border-brand-accent pb-1">Approach</a>
+                    <a href="#about" class="text-gray-700 hover:text-brand-accent font-medium transition-colors border-b-2 border-transparent hover:border-brand-accent pb-1">The Studio</a>
+                    <a href="mailto:hello@auroradigital.com" class="text-white bg-brand-accent py-2 px-6 rounded-full font-semibold shadow-lg hover:bg-brand-dark transition-colors">
+                        Inquire
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-brand-dark hover:bg-brand-light transition-colors" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl border-t border-brand-light">
+            <nav class="px-5 pt-4 pb-4 space-y-3">
+                <a href="#work" class="block text-lg font-medium text-gray-700 hover:text-brand-accent">Our Work</a>
+                <a href="#approach" class="block text-lg font-medium text-gray-700 hover:text-brand-accent">Approach</a>
+                <a href="#about" class="block text-lg font-medium text-gray-700 hover:text-brand-accent">The Studio</a>
+                <a href="mailto:hello@auroradigital.com" class="block w-full text-center text-lg bg-brand-accent text-white py-3 mt-4 rounded-xl hover:bg-brand-dark font-semibold">
+                    Inquire Now
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section: Large Visual Statement -->
+        <section class="relative h-[60vh] sm:h-[80vh] flex items-center justify-center bg-brand-dark text-white overflow-hidden">
+            <!-- Background element for visual interest -->
+            <div class="absolute inset-0 opacity-10 bg-cover bg-center" 
+                 style="background-image: url('https://placehold.co/1200x800/1E293B/E2E8F0?text=Abstract+Pattern');">
+            </div>
+
+            <div class="relative z-10 text-center max-w-4xl px-4">
+                <p class="text-brand-accent text-lg font-semibold uppercase tracking-widest mb-3">
+                    Creative Digital Solutions
+                </p>
+                <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight text-shadow-custom">
+                    Design That Drives <br class="hidden sm:inline"> Real-World Impact
+                </h1>
+                <p class="mt-6 text-xl text-gray-300 max-w-2xl mx-auto">
+                    We fuse strategic insight with flawless execution to build timeless brands and powerful user experiences.
+                </p>
+                <a href="#work" class="mt-10 inline-block bg-brand-accent text-white font-bold py-3 px-8 rounded-full shadow-2xl hover:bg-brand-dark border-2 border-brand-accent transition-all duration-300 transform hover:scale-105">
+                    View Our Portfolio
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. Our Work/Showcase Section -->
+        <section id="work" class="py-20 sm:py-32 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 text-brand-dark">Featured Projects</h2>
+                <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+                    A selection of recent collaborations that highlight our commitment to innovation and craftsmanship.
+                </p>
+                
+                <!-- Project Grid (2 columns on desktop, 1 on mobile) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Project Card 1 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-500">
+                        <img src="https://placehold.co/800x500/0F172A/06B6D4?text=Project+Titan" 
+                             alt="Project Titan Case Study" 
+                             class="w-full h-64 object-cover group-hover:scale-[1.03] transition-transform duration-500">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2">Project Titan: E-Commerce Redesign</h3>
+                            <p class="text-brand-accent text-lg font-medium mb-4">Branding & UX Strategy</p>
+                            <p class="text-gray-600 leading-relaxed">
+                                A comprehensive platform overhaul, focusing on accessibility, faster load times, and a streamlined checkout flow. Resulted in a 45% increase in conversion rates.
+                            </p>
+                            <a href="#" class="mt-4 inline-block text-brand-accent font-semibold hover:text-brand-dark transition-colors">
+                                Read Full Case Study &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-500">
+                        <img src="https://placehold.co/800x500/0F172A/06B6D4?text=AI+Dashboard" 
+                             alt="AI Dashboard Interface" 
+                             class="w-full h-64 object-cover group-hover:scale-[1.03] transition-transform duration-500">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2">Synergy AI: Data Visualization Dashboard</h3>
+                            <p class="text-brand-accent text-lg font-medium mb-4">Interface Design & Data Visualization</p>
+                            <p class="text-gray-600 leading-relaxed">
+                                Development of a complex, real-time data dashboard interface. The design prioritized clarity, information hierarchy, and performance for enterprise users.
+                            </p>
+                            <a href="#" class="mt-4 inline-block text-brand-accent font-semibold hover:text-brand-dark transition-colors">
+                                View Design Specs &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Our Approach Section (Detailed Text) -->
+        <section id="approach" class="py-20 sm:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-start">
+                    
+                    <div class="lg:col-span-5 mb-10 lg:mb-0">
+                        <p class="text-brand-accent font-bold uppercase tracking-widest mb-3">
+                            The Aurora Method
+                        </p>
+                        <h2 class="text-4xl font-bold text-brand-dark leading-snug">
+                            A Phased Approach to Digital Excellence
+                        </h2>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="space-y-10">
+                            <!-- Step 1 -->
+                            <div class="flex">
+                                <span class="flex-shrink-0 text-5xl font-extrabold text-brand-accent mr-6">01</span>
+                                <div>
+                                    <h3 class="text-2xl font-semibold mb-2">Discovery & Strategy</h3>
+                                    <p class="text-gray-600">
+                                        We begin by embedding ourselves in your business goals and audience needs. This foundational phase includes competitive analysis, stakeholder interviews, and technical feasibility studies, ensuring every decision is data-informed.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="flex">
+                                <span class="flex-shrink-0 text-5xl font-extrabold text-brand-accent mr-6">02</span>
+                                <div>
+                                    <h3 class="text-2xl font-semibold mb-2">Design & Iteration</h3>
+                                    <p class="text-gray-600">
+                                        From wireframes and prototypes to polished visual design, we follow a rigorous agile process. We test concepts early and often with real users, allowing for rapid iteration and refinement before development begins.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="flex">
+                                <span class="flex-shrink-0 text-5xl font-extrabold text-brand-accent mr-6">03</span>
+                                <div>
+                                    <h3 class="text-2xl font-semibold mb-2">Execution & Launch</h3>
+                                    <p class="text-gray-600">
+                                        Our engineers build robust, scalable code using modern technologies, emphasizing clean architecture and performance. The project is deployed with rigorous quality assurance testing and launched seamlessly to the market.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. About Section (Simple CTA) -->
+        <section id="about" class="bg-brand-dark py-16 sm:py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                    The Aurora Team: Passionate Experts
+                </h2>
+                <p class="text-lg text-gray-300 mb-10 max-w-3xl mx-auto">
+                    We are a collective of strategists, designers, and developers united by a passion for solving complex problems with simple, elegant technology.
+                </p>
+                <!-- CTA leading to an email link -->
+                <a href="mailto:partnerships@auroradigital.com" class="inline-block bg-brand-accent text-white font-bold py-3 px-10 rounded-full shadow-xl hover:bg-white hover:text-brand-dark transform hover:scale-105 transition-all duration-300">
+                    Discuss a Partnership
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 6. Footer (Static Information) -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-10 border-b border-gray-700 pb-8 mb-8">
+                
+                <!-- Brand Info -->
+                <div class="col-span-2 md:col-span-1">
+                    <a href="#" class="text-2xl font-extrabold text-white mb-3 block">
+                        Aurora<span class="text-brand-accent">.Digital</span>
+                    </a>
+                    <p class="text-sm text-gray-400">
+                        Based in London & New York.<br>Innovating since 2018.
+                    </p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-brand-accent">Menu</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#work" class="text-gray-400 hover:text-white text-sm transition-colors">Portfolio</a></li>
+                        <li><a href="#approach" class="text-gray-400 hover:text-white text-sm transition-colors">Methodology</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white text-sm transition-colors">Our Team</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal/Resources -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-brand-accent">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Use</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social/Contact Info -->
+                <div class="col-span-2">
+                    <h4 class="text-lg font-semibold mb-4 text-brand-accent">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:hello@auroradigital.com" class="text-gray-400 hover:text-white text-sm transition-colors">Email: hello@auroradigital.com</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Follow us on X (Twitter)</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">View our Behance</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center text-sm text-gray-500 pt-4">
+                <p>&copy; 2025 Aurora Digital Studios. All rights reserved. Design purely for demonstration.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- LINK TO EXTERNAL JAVASCRIPT FILE -->
+    <script src="script.js"></script>
+</body>
+</html>

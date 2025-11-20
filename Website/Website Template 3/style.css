@@ -1,0 +1,15 @@
+/*
+ * Custom CSS for Professional Business Website
+ * This file contains base styles and fonts that aren't defined by Tailwind CSS utility classes.
+ */
+
+/* Use Inter font for a professional look */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1a202c; /* Dark text color, complementary to Tailwind classes */
+}
+
+/* Custom scroll behavior for smooth navigation */
+html {
+    scroll-behavior: smooth;
+}

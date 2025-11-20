@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tron Light Cycles</title>
+    <!-- Load Inter and Bungee fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-info">
+        <h1 style="font-family: 'Bungee', cursive; font-size: 2.5rem; color: #fff; text-shadow: 0 0 20px #00F0FF;">TRON LIGHT CYCLES</h1>
+        <div id="status-message">Press START to begin the battle!</div>
+        <div id="instructions">
+            <strong>Player 1 (Cyan):</strong> WASD | 
+            <strong>Player 2 (Red):</strong> Arrow Keys
+        </div>
+    </div>
+    
+    <div id="game-container">
+        <!-- The canvas element where the game will be drawn -->
+        <canvas id="tron-canvas" width="600" height="600"></canvas>
+
+        <div id="overlay">
+            <h2 id="final-message"></h2>
+            <button id="start-button" class="neon-button">START GAME</button>
+            <button id="restart-button" class="neon-button" style="display: none;">RESTART</button>
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript game logic -->
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* Custom CSS to define the clock structure and hand appearance/movement */
+:root {
+    /* Variables for hand colors */
+    --second-hand-color: #ef4444; /* Red-500 */
+    --minute-hand-color: #1e3a8a; /* Blue-800 */
+    --hour-hand-color: #1f2937; /* Gray-800 */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6; /* Light gray background */
+}
+
+/* The Clock Face Container */
+.clock {
+    position: relative;
+    /* Responsive sizing: max 300px, but shrinks on small screens */
+    width: min(90vw, 300px);
+    height: min(90vw, 300px);
+    border-radius: 50%;
+    background: #ffffff;
+    /* Attractive 3D-like shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15),
+                inset 0 0 15px rgba(255, 255, 255, 0.9),
+                0 0 0 4px #4b5563; /* Outline border */
+}
+
+/* Clock Hands Base Style */
+.hand {
+    position: absolute;
+    bottom: 50%; /* Pivot point is at the center bottom of the hand element */
+    left: 50%;
+    transform-origin: bottom;
+    pointer-events: none;
+    border-radius: 50px;
+    /* A subtle overshoot transition for a smoother, more mechanical feel */
+    transition: all 0.05s cubic-bezier(0.4, 2.3, 0.6, 1);
+    transform: translateX(-50%) rotate(0deg); /* Base transform, centered */
+}
+
+/* Specific Hand Styles (lengths are set relative to the clock size) */
+.hour-hand {
+    width: 6px;
+    height: 27%;
+    background: var(--hour-hand-color);
+    z-index: 30;
+}
+
+.minute-hand {
+    width: 4px;
+    height: 40%;
+    background: var(--minute-hand-color);
+    z-index: 20;
+}
+
+.second-hand {
+    width: 2px;
+    height: 47%;
+    background: var(--second-hand-color);
+    z-index: 10;
+}
+
+/* Center point where hands connect */
+.center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background: var(--second-hand-color);
+    border-radius: 50%;
+    z-index: 40;
+    border: 2px solid #ffffff;
+}
+
+/* Hour Marks (Numbers) Styling and Positioning */
+.hour-mark {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.hour-mark span {
+    position: absolute;
+    font-size: 1.25rem; 
+    font-weight: 600; 
+    color: #374151; 
+    transform: translate(-50%, -50%);
+}
+
+/* Positioning the numbers (12, 3, 6, 9) */
+.hour-mark:nth-child(1) span { top: 10%; left: 50%; } /* 12 */
+.hour-mark:nth-child(2) span { top: 50%; right: 10%; transform: translate(50%, -50%); } /* 3 */
+.hour-mark:nth-child(3) span { bottom: 10%; left: 50%; transform: translate(-50%, 50%); } /* 6 */
+.hour-mark:nth-child(4) span { top: 50%; left: 10%; transform: translate(-50%, -50%); } /* 9 */

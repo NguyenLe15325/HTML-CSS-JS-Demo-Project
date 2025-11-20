@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="startScreen">
+            <h1>🐍 SNAKE GAME</h1>
+            <p>Use Arrow Keys to move</p>
+            <p>Eat the food to grow</p>
+            <p>Don't hit yourself!</p>
+            <p style="color: #4ecca3;">✨ Wrap through walls! ✨</p>
+            
+            <div id="difficultySelector">
+                <h3>Choose Difficulty:</h3>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn active" data-speed="200">Easy</button>
+                    <button class="difficulty-btn" data-speed="150">Normal</button>
+                    <button class="difficulty-btn" data-speed="100">Hard</button>
+                    <button class="difficulty-btn" data-speed="50">Insane</button>
+                </div>
+            </div>
+            
+            <button id="startBtn">START GAME</button>
+        </div>
+        
+        <div id="ui">
+            <div class="stat">
+                <span class="label">Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">High Score:</span>
+                <span id="highScore">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">Speed:</span>
+                <span id="speed">1</span>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="gameOver">
+            <h2>GAME OVER!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p id="newHighScore" style="display: none;">🎉 NEW HIGH SCORE! 🎉</p>
+            
+            <div id="difficultySelector2">
+                <h3>Choose Difficulty:</h3>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn-2 active" data-speed="200">Easy</button>
+                    <button class="difficulty-btn-2" data-speed="150">Normal</button>
+                    <button class="difficulty-btn-2" data-speed="100">Hard</button>
+                    <button class="difficulty-btn-2" data-speed="50">Insane</button>
+                </div>
+            </div>
+            
+            <button id="restartBtn">PLAY AGAIN</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

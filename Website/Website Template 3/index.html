@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Solutions - Digital Innovation</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Load Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration (Kept in head to load custom colors/fonts before body renders) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#4c51bf', /* Tailwind Indigo-700 equivalent */
+                        'secondary-gray': '#f7fafc', /* Tailwind Gray-100 equivalent */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Brand -->
+            <a href="#" class="text-2xl font-bold text-primary-blue tracking-tight">
+                Pro<span class="text-gray-900">Solutions</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-primary-blue transition duration-200 font-medium">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-primary-blue transition duration-200 font-medium">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-primary-blue transition duration-200 font-medium">About</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary-blue transition duration-200 font-medium">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-secondary-gray transition duration-200 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Dropdown (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 shadow-inner">
+            <a href="#home" class="block py-2 text-gray-700 hover:bg-secondary-gray rounded-lg px-3 transition duration-150">Home</a>
+            <a href="#services" class="block py-2 text-gray-700 hover:bg-secondary-gray rounded-lg px-3 transition duration-150">Services</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:bg-secondary-gray rounded-lg px-3 transition duration-150">About</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:bg-secondary-gray rounded-lg px-3 transition duration-150">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-secondary-gray py-20 md:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+            <!-- Hero Text Content -->
+            <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                    Transforming Ideas into <span class="text-primary-blue">Digital Reality</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    We deliver custom, scalable software solutions and cutting-edge web experiences that drive growth and efficiency.
+                </p>
+                <a href="#contact" class="inline-block bg-primary-blue text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:bg-indigo-800 transition duration-300 transform hover:scale-105">
+                    Start Your Project
+                </a>
+            </div>
+            
+            <!-- Hero Image/Placeholder -->
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://placehold.co/500x350/4c51bf/ffffff?text=Innovative+Design" alt="Abstract modern design representing digital innovation" 
+                     class="rounded-2xl shadow-2xl w-full max-w-sm md:max-w-md object-cover"
+                     onerror="this.onerror=null; this.src='https://placehold.co/500x350/4c51bf/ffffff?text=Innovative+Design'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Our Core Services</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                We specialize in leveraging the latest technology to solve your toughest business challenges.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Service 1: Web Development -->
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <div class="text-primary-blue mb-4">
+                        <!-- Icon Placeholder: Web Icon -->
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Custom Web Apps</h3>
+                    <p class="text-gray-600">Building lightning-fast, secure, and scalable web applications tailored precisely to your operational needs.</p>
+                </div>
+
+                <!-- Service 2: Cloud Infrastructure -->
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <div class="text-primary-blue mb-4">
+                        <!-- Icon Placeholder: Cloud Icon -->
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.973 4 4 0 00-6.894-3.525M7 13h10a4 4 0 00-4-4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Cloud & DevOps</h3>
+                    <p class="text-gray-600">Modernizing infrastructure, automating deployments, and ensuring 24/7 reliability for your digital products.</p>
+                </div>
+
+                <!-- Service 3: UX/UI Design -->
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <div class="text-primary-blue mb-4">
+                        <!-- Icon Placeholder: Pencil/Design Icon -->
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">UX/UI Design</h3>
+                    <p class="text-gray-600">Creating intuitive, beautiful, and accessible user experiences that delight customers and meet business goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Testimonial Section (Light Background) -->
+    <section id="about" class="bg-secondary-gray py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            </div>
+            
+            <!-- Testimonial Card -->
+            <div class="max-w-4xl mx-auto bg-white p-10 md:p-12 rounded-2xl shadow-2xl border-t-4 border-primary-blue">
+                <p class="text-xl italic text-gray-700 mb-6">
+                    "ProSolutions didn't just build our platform; they partnered with us to redefine our digital strategy. The speed, professionalism, and quality of the final product exceeded all expectations. Our conversion rate improved by 40% within the first quarter."
+                </p>
+                <div class="flex items-center justify-center">
+                    <div class="w-12 h-12 bg-gray-300 rounded-full mr-4">
+                        <!-- Placeholder for Avatar -->
+                        <img src="https://placehold.co/48x48/d1d5db/4c51bf?text=A" alt="Client Avatar" class="rounded-full w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/48x48/d1d5db/4c51bf?text=A'">
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-900">Alex J. Mitchell</p>
+                        <p class="text-sm text-gray-500">CTO, Global Tech Innovations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Ready to Innovate?</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Let's discuss your project. We're eager to hear about your challenges and goals.
+            </p>
+
+            <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-2xl border border-gray-100">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-150" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-150" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..."
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-150" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-primary-blue text-white font-semibold py-3 rounded-xl shadow-lg hover:bg-indigo-800 transition duration-300 transform hover:scale-[1.01]">
+                            Send Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6 border-b border-gray-700 pb-6">
+                <div class="text-2xl font-bold mb-4 md:mb-0">ProSolutions</div>
+                <div class="space-x-6">
+                    <a href="#services" class="text-gray-400 hover:text-white transition duration-200">Services</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition duration-200">About Us</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition duration-200">Contact</a>
+                </div>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2025 ProSolutions. All rights reserved. | Built with Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

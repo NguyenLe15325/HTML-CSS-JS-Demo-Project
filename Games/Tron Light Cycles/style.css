@@ -1,0 +1,123 @@
+/* Custom CSS for a dark, neon, Tron-inspired aesthetic */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #000;
+    color: #00F0FF; /* Neon Cyan text */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+#game-container {
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.4);
+    border: 4px solid #00F0FF;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+canvas {
+    display: block;
+    background: #000; /* Main grid background */
+}
+
+/* Scoreboard and Instructions */
+#game-info {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#status-message {
+    font-family: 'Bungee', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+    min-height: 30px; /* Reserve space */
+}
+
+#instructions {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    font-size: 0.9rem;
+    color: #777;
+}
+#instructions strong {
+    color: #00F0FF;
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+}
+
+/* Game Over Screen Overlay */
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(2px);
+    display: none; /* Controlled by JS */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+    z-index: 10;
+    border-radius: 8px;
+}
+
+#overlay h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Buttons */
+.neon-button {
+    padding: 10px 25px;
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+#start-button {
+    color: #00F0FF;
+    border-color: #00F0FF;
+}
+#start-button:hover {
+    background: #00F0FF;
+    color: #000;
+    box-shadow: 0 0 20px #00F0FF;
+}
+
+#restart-button {
+    color: #FF5050;
+    border-color: #FF5050;
+    box-shadow: 0 0 10px rgba(255, 80, 80, 0.3);
+}
+#restart-button:hover {
+    background: #FF5050;
+    color: #000;
+    box-shadow: 0 0 20px #FF5050;
+}
+
+/* Player Colors for Status/Overlay */
+.player-1-text { color: #00F0FF; text-shadow: 0 0 5px #00F0FF; }
+.player-2-text { color: #FF5050; text-shadow: 0 0 5px #FF5050; }

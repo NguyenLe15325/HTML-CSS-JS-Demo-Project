@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #282c34; /* Dark background */
+    font-family: Arial, sans-serif;
+}
+
+.clock-container {
+    padding: 30px 60px;
+    border: 5px solid #61dafb; /* Bright blue border */
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(97, 218, 251, 0.6); /* Glowing effect */
+}
+
+#clock {
+    font-size: 6em; /* Large text for the time */
+    color: #f0f0f0; /* Light text color */
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(97, 218, 251, 0.8);
+}

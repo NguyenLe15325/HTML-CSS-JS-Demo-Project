@@ -1,0 +1,40 @@
+/* * Custom Stylesheet for Global Tech Solutions
+ * Contains CSS variables for theming and custom link styling.
+ */
+
+/* Define color variables for easy theme switching */
+:root {
+    --color-primary: #1D4ED8; /* Blue 700 */
+    --color-secondary: #059669; /* Emerald 600 */
+}
+/* Dark mode variable overrides */
+.dark {
+    --color-primary: #3B82F6; /* Blue 500 */
+    --color-secondary: #34D399; /* Emerald 400 */
+}
+body {
+    font-family: 'Inter', sans-serif;
+    /* Smooth transition for background/text color when switching themes */
+    transition: background-color 0.3s, color 0.3s; 
+}
+/* Style for primary navigation links (Tailwind @apply allows use of utility classes here) */
+.nav-link {
+    /* Applying classes directly for better readability in CSS */
+    color: var(--text-light); 
+    font-weight: 500;
+    transition: color 0.2s, border-color 0.2s;
+    padding-bottom: 0.25rem;
+    border-bottom-width: 2px;
+    border-color: transparent;
+}
+.dark .nav-link {
+    color: var(--text-dark);
+}
+.nav-link:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.dark .nav-link:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Tetris</title>
+    <!-- Load Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Tone.js for simple sound effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="game-container min-h-screen flex flex-col items-center justify-center">
+        <h1 class="text-4xl text-green-400 mb-6 tracking-widest uppercase">TETRIS</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+            
+            <!-- Stats Panel (Left/Top) -->
+            <div class="stats-panel flex flex-col space-y-4">
+                <div class="panel">
+                    <h3 class="text-2xl text-yellow-400 mb-2">Score: <span id="score">0</span></h3>
+                    <h3 class="text-2xl text-yellow-400">Lines: <span id="lines">0</span></h3>
+                </div>
+
+                <div class="panel">
+                    <h3 class="text-2xl text-purple-400 mb-2">Next Piece:</h3>
+                    <!-- Canvas for next piece preview (4x4) -->
+                    <canvas id="nextPieceCanvas" width="120" height="120" class="mx-auto block"></canvas>
+                </div>
+                
+                <div id="messageBox" class="panel hidden text-center text-red-500 font-bold text-3xl">
+                    GAME OVER
+                </div>
+            </div>
+
+            <!-- Game Board (Center) -->
+            <div class="game-board col-span-1 md:col-span-1">
+                <canvas id="gameCanvas" width="300" height="600"></canvas>
+            </div>
+
+            <!-- Controls (Right/Bottom) -->
+            <div class="control-panel flex flex-col space-y-4">
+                <div class="panel p-0">
+                    <button id="startButton" class="w-full control-button bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-4 rounded-xl text-2xl">
+                        START / PAUSE
+                    </button>
+                </div>
+                
+                <div class="panel flex flex-col space-y-3">
+                    <h3 class="text-xl text-center text-blue-400 mb-2">Controls</h3>
+                    <p class="text-center">← Move Left</p>
+                    <p class="text-center">→ Move Right</p>
+                    <p class="text-center">↑ Rotate</p>
+                    <p class="text-center">↓ Soft Drop</p>
+                    <p class="text-center">Space Hard Drop</p>
+                </div>
+
+                <!-- Touch Controls (Visible only on small screens) -->
+                <div id="touchControls" class="md:hidden grid grid-cols-3 gap-2">
+                    <button data-key="ArrowLeft" class="control-button bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 rounded-lg text-2xl">←</button>
+                    <button data-key="ArrowUp" class="control-button bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 rounded-lg text-2xl">↑</button>
+                    <button data-key="ArrowRight" class="control-button bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 rounded-lg text-2xl">→</button>
+                    <button data-key="ArrowDown" class="col-span-3 control-button bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 rounded-lg text-2xl">↓ Drop</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+
+</body>
+</html>

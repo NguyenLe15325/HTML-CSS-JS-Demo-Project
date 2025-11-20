@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        <div id="ui">
+            <div>Score: <span id="score">0</span></div>
+            <div>Lives: <span id="lives">3</span></div>
+        </div>
+        <div id="startScreen">
+            <h1>SPACE SHOOTER</h1>
+            <p>← → Arrow Keys to Move</p>
+            <p>SPACE to Shoot</p>
+            <p>Destroy all enemies!</p>
+            <button id="startBtn">START GAME</button>
+        </div>
+        <div id="gameOver">
+            <h2>GAME OVER</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn">PLAY AGAIN</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
